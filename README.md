@@ -11,6 +11,8 @@ This repository provides code to reproduce the experiments from the paper. The w
 
 GeoRank uses spherical distances between image locations to regularize contrastive SSL objectives. The method is designed to improve representation learning for multispectral satellite images by exploiting the geographical structure of Earth observation data. In addition to introducing GeoRank, the repository includes experiments on key design choices for SSL in remote sensing, including data augmentations, dataset cardinality, image size, geographical sampling, temporal views, and downstream evaluation across classification and segmentation tasks.
 
+![Overview of the method](method_overview_georank.png)
+
 ## Installation
 
 We recommend using conda:
