@@ -1,0 +1,37 @@
+name: env_py312
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+  - lightning
+  - torchmetrics
+  - ca-certificates
+  - certifi
+  - openssl
+  - hydra-core
+  - pandas
+  - matplotlib
+  - lightly
+  - scikit-learn
+  - albumentations
+  - safetensors
+  - conda-forge::bigearthnet-patch-interface
+  - numba
+  - fastparquet
+  - pyarrow
+  - lmdb
+  - python-lmdb
+  - notebook
+  - seaborn
+  - timm
+  - gdown
+  - kagglehub
+  - ipywidgets
+  - netcdf4
+  - xarray
+  - rasterio
+prefix: /home/tomburgert/miniforge3/envs/env_py312
