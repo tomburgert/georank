@@ -1,0 +1,252 @@
+BigEarthNetV2:
+  task: multi_label
+  lmdb_path: 
+    normal_size: /data_read_only/BigEarthNet/BigEarthNet-V2/BENv2.lmdb
+  labels_path: /data_read_only/BigEarthNet/BigEarthNet-V2/metadata.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/all_train.csv
+      '50':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/train_50percent_v1.csv
+        v2: /data/tomburgert/bigearthnet_stats/benv2_splits/train_50percent_v2.csv
+        v3: /data/tomburgert/bigearthnet_stats/benv2_splits/train_50percent_v3.csv
+      '20':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/train_20percent_v1.csv
+        v2: /data/tomburgert/bigearthnet_stats/benv2_splits/train_20percent_v2.csv
+        v3: /data/tomburgert/bigearthnet_stats/benv2_splits/train_20percent_v3.csv
+      '10':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/train_10percent_v1.csv
+        v2: /data/tomburgert/bigearthnet_stats/benv2_splits/train_10percent_v2.csv
+        v3: /data/tomburgert/bigearthnet_stats/benv2_splits/train_10percent_v3.csv
+      '05':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/train_05percent_v1.csv
+        v2: /data/tomburgert/bigearthnet_stats/benv2_splits/train_05percent_v2.csv
+        v3: /data/tomburgert/bigearthnet_stats/benv2_splits/train_05percent_v3.csv
+      '02':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/train_02percent_v1.csv
+        v2: /data/tomburgert/bigearthnet_stats/benv2_splits/train_02percent_v2.csv
+        v3: /data/tomburgert/bigearthnet_stats/benv2_splits/train_02percent_v3.csv
+      '01':
+        v1: /data/tomburgert/bigearthnet_stats/benv2_splits/train_01percent_v1.csv
+        v2: /data/tomburgert/bigearthnet_stats/benv2_splits/train_01percent_v2.csv
+        v3: /data/tomburgert/bigearthnet_stats/benv2_splits/train_01percent_v3.csv
+  val_csv: /data/tomburgert/bigearthnet_stats/benv2_splits/val_train.csv
+  test_csv: /data/tomburgert/bigearthnet_stats/benv2_splits/all_test.csv
+  num_classes: 19
+  num_channels: 10
+
+SSL4EO:
+  task: unlabeled
+  lmdb_path: 
+    normal_size: /data_read_only/SSL4EO-S12/s2a_resized_lmdb_120x120.db
+    '60x60': /data_read_only/SSL4EO-S12/s2a_resized_lmdb_60x60.db
+    '264x264': /data_read_only/SSL4EO-S12/s2a_resized_lmdb_264x264.db
+  labels_path: /data_read_only/EuroSAT_V2/labels/single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_v3.csv
+      '50':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_50percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_50percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_50percent_v3.csv
+      '20':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_20percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_20percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_20percent_v3.csv
+      '10':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_10percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_10percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_10percent_v3.csv
+      '05':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_05percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_05percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_05percent_v3.csv
+      '02':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_02percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_02percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_02percent_v3.csv
+      '01':
+        v1: /data_read_only/SSL4EO-S12/splits/train_single_loc_01percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_single_loc_01percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_single_loc_01percent_v3.csv
+    'multi_loc':
+      '100':
+        v1: /data_read_only/SSL4EO-S12/splits/train_multi_loc.csv
+      '25':
+        v1: /data_read_only/SSL4EO-S12/splits/train_multi_loc_25percent_v1.csv
+        v2: /data_read_only/SSL4EO-S12/splits/train_multi_loc_25percent_v2.csv
+        v3: /data_read_only/SSL4EO-S12/splits/train_multi_loc_25percent_v3.csv
+  val_csv: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+  test_csv: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+  num_classes: 1
+  num_channels: 10
+
+SSL4EOEurope:
+  task: unlabeled
+  lmdb_path: 
+    normal_size: /data_read_only/SSL4EO-S12/s2a_resized_lmdb_120x120.db
+  labels_path: /data_read_only/EuroSAT_V2/labels/single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data/tomburgert/data/additional_data/ssl4eo_train_single_loc_v1_europe.csv
+  val_csv: /data/tomburgert/data/additional_data/ssl4eo_train_single_loc_v1_europe.csv
+  test_csv: /data/tomburgert/data/additional_data/ssl4eo_train_single_loc_v1_europe.csv
+  num_classes: 1
+  num_channels: 10
+
+SeCo:
+  task: unlabeled
+  lmdb_path: 
+    normal_size: /data_read_only/SeCo/lmdb_uint8_120x120.db
+  labels_path: /data_read_only/EuroSAT_V2/labels/single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/SeCo/splits/train_single_loc_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_v3.csv
+      '50':
+        v1: /data_read_only/SeCo/splits/train_single_loc_50percent_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_50percent_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_50percent_v3.csv
+      '20':
+        v1: /data_read_only/SeCo/splits/train_single_loc_20percent_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_20percent_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_20percent_v3.csv
+      '10':
+        v1: /data_read_only/SeCo/splits/train_single_loc_10percent_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_10percent_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_10percent_v3.csv
+      '05':
+        v1: /data_read_only/SeCo/splits/train_single_loc_05percent_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_05percent_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_05percent_v3.csv
+      '02':
+        v1: /data_read_only/SeCo/splits/train_single_loc_02percent_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_02percent_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_02percent_v3.csv
+      '01':
+        v1: /data_read_only/SeCo/splits/train_single_loc_01percent_v1.csv
+        v2: /data_read_only/SeCo/splits/train_single_loc_01percent_v2.csv
+        v3: /data_read_only/SeCo/splits/train_single_loc_01percent_v3.csv
+  val_csv: /data_read_only/SeCo/splits/train_single_loc_v1.csv
+  test_csv: /data_read_only/SeCo/splits/train_single_loc_v1.csv
+  num_classes: 1
+  num_channels: 10
+
+Sen4AgriNet_Segmentation_Corr:
+  task: segmentation
+  lmdb_path: 
+    normal_size: /data_read_only/Sen4AgriNet/lmdb.db
+  labels_path: /data_read_only/Sen4AgriNet/labels/multi_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/Sen4AgriNet/splits/smallsize_sup_train1.csv
+  val_csv: /data_read_only/Sen4AgriNet/splits/smallsize_sup_test1.csv
+  test_csv: /data_read_only/Sen4AgriNet/splits/smallsize_sup_test1.csv
+  num_classes: 9
+  num_channels: 10
+
+SeasonNet:
+  task: segmentation
+  lmdb_path: 
+    normal_size: /data/tomburgert/data/datasets/SeasonNet/lmdb.db
+  labels_path: /data_read_only/Sen4AgriNet/labels/multi_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data/tomburgert/data/datasets/SeasonNet/splits/train_summer_keys.csv
+  val_csv: /data/tomburgert/data/datasets/SeasonNet/splits/val_summer_keys.csv
+  test_csv: /data/tomburgert/data/datasets/SeasonNet/splits/test_summer_keys.csv
+  num_classes: 33
+  num_channels: 10
+
+Sen4AgriNet_Corr:
+  task: multi_label
+  lmdb_path: 
+    normal_size: /data_read_only/Sen4AgriNet/lmdb.db
+  labels_path: /data_read_only/Sen4AgriNet/labels/multi_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/Sen4AgriNet/splits/smallsize_sup_train1.csv
+  val_csv: /data_read_only/Sen4AgriNet/splits/smallsize_sup_test1.csv
+  test_csv: /data_read_only/Sen4AgriNet/splits/smallsize_sup_test1.csv
+  num_classes: 9
+  num_channels: 10
+
+Sen4AgriNet_Uncorr:
+  task: multi_label
+  lmdb_path: 
+    normal_size: /data_read_only/Sen4AgriNet/lmdb.db
+  labels_path: /data_read_only/Sen4AgriNet/labels/multi_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/Sen4AgriNet/splits/smallsize_sup_train3.csv
+  val_csv: /data_read_only/Sen4AgriNet/splits/smallsize_sup_test3.csv
+  test_csv: /data_read_only/Sen4AgriNet/splits/smallsize_sup_test3.csv
+  num_classes: 9
+  num_channels: 10
+
+So2Sat_Random:
+  task: single_label
+  lmdb_path: 
+    normal_size: /data_read_only/So2Sat/lmdb_random_uint16.db
+  labels_path: /data/tomburgert/data/additional_data/labels/random_single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/So2Sat/splits/random/train.csv
+  val_csv: /data_read_only/So2Sat/splits/random/test.csv
+  test_csv: /data_read_only/So2Sat/splits/random/test.csv
+  num_classes: 9
+  num_channels: 17
+
+So2Sat_Block:
+  task: single_label
+  lmdb_path: 
+    normal_size: /data_read_only/So2Sat/lmdb_block_uint16.db
+  labels_path: /data/tomburgert/data/additional_data/labels/block_single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/So2Sat/splits/block/train.csv
+  val_csv: /data_read_only/So2Sat/splits/block/test.csv
+  test_csv: /data_read_only/So2Sat/splits/block/test.csv
+  num_classes: 9
+  num_channels: 17
+
+So2Sat_Culture10:
+  task: single_label
+  lmdb_path: 
+    normal_size: /data_read_only/So2Sat/lmdb_culture10_uint16.db
+  labels_path: /data/tomburgert/data/additional_data/labels/culture10_single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/So2Sat/splits/culture10/train.csv
+  val_csv: /data_read_only/So2Sat/splits/culture10/test.csv
+  test_csv: /data_read_only/So2Sat/splits/culture10/test.csv
+  num_classes: 9
+  num_channels: 17
+
+EuroSATV2:
+  task: single_label
+  lmdb_path: 
+    normal_size: /data_read_only/EuroSAT_V2/lmdb_64x64.db
+  labels_path: /data_read_only/EuroSAT_V2/labels/single_labels.parquet
+  train_csv:
+    'single_loc':
+      '100':
+        v1: /data_read_only/EuroSAT_V2/splits/train.csv
+  val_csv: /data_read_only/EuroSAT_V2/splits/test.csv
+  test_csv: /data_read_only/EuroSAT_V2/splits/test.csv
+  num_classes: 9
+  num_channels: 10

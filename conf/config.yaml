@@ -1,0 +1,55 @@
+defaults:
+  - base_config
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+  sweep:
+    dir: /data/tomburgert/data/hydra_multirun2
+
+params:
+  seed: 1
+  cuda_no: '3'
+  dataset: SSL4E0
+  max_epochs: 30
+  skip_training: false
+  knn_evaluation: false
+dataaug:
+  augmentations: 'flip'
+  p: 0.8
+model:
+  name: resnet18
+  # channels: 3
+  channels: 10
+  pretrained: false
+dataset:
+  lmdb_path: /data_read_only/SSL4EO-S12/s2a_resized_lmdb_120x120.db
+  labels_path: /data_read_only/EuroSAT_V2/labels/single_labels.parquet
+  train_csv: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+  test_csv: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+  intersection_8country: false
+  global_pctl: false
+  num_workers: 4
+  batch_size: 512
+  pin_memory: true
+  eval_on_test: true
+optim:
+  min_lr: 0.001
+  # momentum: 0.9
+  weight_decay: 0.01
+  gamma: 0.1
+  milestones: [10, 20]
+logging:
+  exp_dir: /data/tomburgert/data/logs_v2/test
+  save_checkpoint: true
+tracking:
+  train_track_with_transformation: true
+  should_track_train_probs: false
+  should_track_val_probs: false
+  apply_feature_extraction: false
+  feature_extraction_epochs: [0]
+  feature_extraction_with_transformation: true

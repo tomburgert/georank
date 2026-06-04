@@ -1,0 +1,68 @@
+defaults:
+  - base_config
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+
+hydra:
+  output_subdir: null  
+  run:  
+    dir: .
+  sweep:
+    dir: /data/tomburgert/data/hydra_multirun2
+
+params:
+  seed: 1
+  dataset: SeCo
+  populations: 1
+  cuda_no: '5'
+  max_epochs: 50
+ssl:
+  algorithm: MoCoV2
+  views: 2
+  eval_batch_size: 512
+  eval_datasets: [BigEarthNetV2,Sen4AgriNet_Corr,Sen4AgriNet_Uncorr,So2Sat_Random,So2Sat_Block,So2Sat_Culture10,EuroSATV2]
+  skip_knn_eval: false
+  skip_linear_eval: true
+  skip_finetune_eval: true
+  dino_global_resize_size: [120, 120]
+  dino_local_resize_size: [60, 60]
+  dino_global_scale: [0.8, 1]
+  dino_local_scale: [0.08, 0.25]
+  dino_n_local_views: 4
+  use_geography_loss: false
+dataaug:
+  augmentations: 'randomresizedcrop_flip_randomrotate90'
+  p_list: [1, 0.75, 0.75]
+  resize_size: [120, 120]
+  scale: [0.2, 1]
+  var_max: 50
+  brightness_limit: 0.1
+  shear: 20
+  pct: 0.2
+  num_bits: 6
+  contrast_limit: 0.3
+  sigma: [0.1, 2.0]
+model:
+  name: resnet18
+  channels: 10
+  pretrained: false
+dataset:
+  lmdb_path: /data_read_only/SSL4EO-S12/s2a_resized_lmdb_120x120.db
+  labels_path: /data_read_only/EuroSAT_V2/labels/single_labels.parquet
+  train_csv: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+  test_csv: /data_read_only/SSL4EO-S12/splits/train_single_loc_v1.csv
+  intersection_8country: false
+  global_pctl: false
+  num_workers: 4
+  batch_size: 512
+  pin_memory: true
+  eval_on_test: true
+optim:
+  min_lr: 0.001
+  weight_decay: 0.01
+  gamma: 0.1
+  milestones: [10, 20]
+logging:
+  exp_dir: /workspace/data/logs/ssl_pretraining_size/seco10pct
+  save_checkpoint: true
