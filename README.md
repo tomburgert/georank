@@ -1,6 +1,6 @@
 # GeoRank: Official Implementation
 
-This repository is the official implementation of **“Rank-based Geographical Regularization: Revisiting Contrastive Self-Supervised Learning for Multispectral Remote Sensing Imagery”**
+This repository is the official implementation of **“Rank-based Geographical Regularization: Revisiting Contrastive Self-Supervised Learning for Multispectral Remote Sensing Imagery”** -
 Tom Burgert, Leonard Hackel, Paolo Rota, Begüm Demir @ *WACV 2025 (oral)*
 
 [![arXiv](https://img.shields.io/badge/arXiv-2601.02289-b31b1b.svg)](https://arxiv.org/abs/2601.02289)
